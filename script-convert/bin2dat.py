@@ -54,6 +54,9 @@ def show_help():
     print '   -S    opcional, indica si se agrega el canal 25'
     print '   -C    opcional, debe indicarse una cadea de numeros de 0 a 23 (o 24) que indica los canales'
     print '         que se van a utilizar. al usar esta opcion se ignora la opcion -T y -S'
+    print ' '
+    print '  ejemplo:'
+    print '  python bin2dat.py -i ../../registro/030315/prueba12LC -o salida.dat -T 1,2,3 -S True -C 0,2,5,18'
 
 
 def main(argv):

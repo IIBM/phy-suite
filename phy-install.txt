@@ -12,10 +12,10 @@ $ uname -a
 
 si la salida dice x64 es de 64 bits, sino no, y en ese caso hay que descargar la versión de 32 bits.
 
-$ sudo bash Miniconda3-latest-Linux-x86_64.sh
+$ bash Miniconda3-latest-Linux-x86_64.sh
 Este comando debe ejecutarse desde la misma ubicación donde se encuentra el archivo descagado.
 
-Durante la instalacion, primero aprtar ENTER para continuar. 
+Durante la instalacion, primero presionar ENTER para continuar. 
 Se muestra la licencia, apretar SPACE para ir al final y luego escribir en la terminal 'yes' para aceptar la licencia.
 
 Al final de la instalacion va a preguntar si desea agregar estos datos al .bashrc
@@ -30,6 +30,22 @@ si se elige no, para utilizar conda hay que ejecutar
 sugiero poner 'no'
 
 una vez instalado miniconda, seguimos los pasos indicados por la documentacion de phy, que son:
+
+si el sistema se encuentra destras de un proxy
+
+crear el archivo /home/USUARIO/.condarc con el siguiente contenido
+proxy_servers:
+    http: http://proxy.uba.ar:8080
+    https: https://proxy.uba.ar:8080
+
+cambiando por la direccion de proxy que corresponda
+
+y luego generar la variable de entorno (si no esta generada por sistema)
+
+$ export http_proxy=http://proxy.uba.ar:8080
+$ export https_proxy=http://proxy.uba.ar:8080
+
+luego de configurar el proxy, la instalacion continua normalmente
 
 $ export PATH=/home/USUARIO/miniconda3/bin:$PATH
 $ conda install conda python=3.4 pip numpy matplotlib scipy h5py pyqt ipython-notebook requests six --yes
@@ -56,4 +72,5 @@ que deveria devolver
 agregar los archivos .prb en 
 
 /home/USUARIO/miniconda3/lib/python3.4/site-packages/phy/electrode/probes
+
 
