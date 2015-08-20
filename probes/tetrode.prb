@@ -1,0 +1,25 @@
+channel_groups = {
+    # Shank index.
+    0:
+        {
+            # List of channels to keep for spike detection.
+            'channels': list(range(4)),
+
+            # Adjacency graph. Dead channels will be automatically discarded
+            # by considering the corresponding subgraph.
+            'graph': [
+                (0, 1), (0, 2),
+                (0, 3), (1, 2),
+                (1, 3), (2, 3),
+            ],
+
+            # 2D positions of the channels, only for visualization purposes
+            # in KlustaViewa. The unit doesn't matter.
+            'geometry': {
+                3: (-30, -300),
+                2: ( 30, -300),
+                1: (-30,  300),
+                0: ( 30,  300),
+            }
+    }
+}
